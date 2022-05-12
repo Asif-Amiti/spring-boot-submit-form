@@ -25,7 +25,7 @@ public class HibernateConfiguration {
     public LocalSessionFactoryBean getSessionFactory(DataSource dataSource) {            // creating session factory
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
-        sessionFactory.setPackagesToScan("com.submitform");
+        sessionFactory.setPackagesToScan("com.submitform.app");
         sessionFactory.setHibernateProperties(additionalProperties());
         return sessionFactory;
     }
@@ -47,7 +47,7 @@ public class HibernateConfiguration {
         LocalContainerEntityManagerFactoryBean em
                 = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan("com.submitform");
+        em.setPackagesToScan("com.submitform.app");
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
